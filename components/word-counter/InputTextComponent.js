@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {Container, Col, Row} from "react-bootstrap"
 import TextField from '@material-ui/core/TextField'
+import CommonWordsTable from '../word-counter/CommonWordsTable'
 
 const InputText = (props) => {
 
@@ -8,6 +9,12 @@ const InputText = (props) => {
     const [words, setWords] = useState(0)
     const [sentences, setSentences] = useState(0)
     const [paragraphs, setParaghraphs] = useState(0)
+    const [densityArr, setDensityArr] = useState([
+        {word: 'word', density: 5},
+        {word: 'word', density: 5},
+        {word: 'word', density: 5},
+        {word: 'word', density: 5}
+    ])
 
     const textChangeHandler = (event) => {
         const mainStr = event.target.value
@@ -19,7 +26,7 @@ const InputText = (props) => {
 
     return (
         <Container className='container-fluid' style={{padding: 20, margin: 0,  marginTop: 20}}>
-            <Row className='w-75 ml-4'>
+            <Row className='w-75 ml-2'>
                 <Col className='m-0'>
                     <TextBox
                         text='Words'
@@ -46,8 +53,8 @@ const InputText = (props) => {
                         number={words}/>
                 </Col>
             </Row>
-            <Row className='w-75'>
-                <Col>
+            <Row>
+                <Col md={8}>
                     <TextField
                         id="outlined-full-width"
                         style={{marginLeft: 20, marginTop: 20}}
@@ -62,6 +69,9 @@ const InputText = (props) => {
                         onChange={textChangeHandler}
                         variant="outlined"
                     />
+                </Col>
+                <Col md={3} style={{padding: 10}}>
+                    <CommonWordsTable data={densityArr}/>
                 </Col>
             </Row>
         </Container>
