@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import {Container, Col, Row} from "react-bootstrap"
 import TextField from '@material-ui/core/TextField'
 import CommonWordsTable from '../word-counter/CommonWordsTable'
@@ -25,7 +25,7 @@ const InputText = (props) => {
     }
 
     return (
-        <Container className='container-fluid' style={{padding: 20, margin: 0,  marginTop: 20}}>
+        <Container className='container-fluid' style={{padding: 20, margin: 0, marginTop: 20}}>
             <Row className='w-75 ml-2'>
                 <Col className='m-0'>
                     <TextBox
@@ -70,8 +70,8 @@ const InputText = (props) => {
                         variant="outlined"
                     />
                 </Col>
-                <Col md={3} style={{padding: 10}}>
-                    <CommonWordsTable data={densityArr}/>
+                <Col md={3} className='ml-1' style={{padding: 10}}>
+                    <CommonWordsTable word={"word"} key={"index"}/>
                 </Col>
             </Row>
         </Container>
@@ -80,7 +80,7 @@ const InputText = (props) => {
 
 const TextBox = (props) => {
     return (
-        <Container className='container-fluid w-auto' >
+        <Container className='container-fluid w-auto'>
             <Row>
                 <Col md={3}>
                     <h4 style={{fontSize: 14, color: '#aaaaaa'}}>{props.text}</h4>
