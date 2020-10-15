@@ -30,14 +30,9 @@ const useStyles = makeStyles({
 });
 
 
-const CustomizedTables extends React.Component {
+const CustomizedTables = () => {
 
     const classes = useStyles()
-
-    constructor(props)
-    {
-        super(props)
-    }
 
     const [densityArr, setDensityArr] = useState([
         {word: 'word', density: 5},
@@ -46,41 +41,15 @@ const CustomizedTables extends React.Component {
         {word: 'word', density: 5}
     ])
 
-    componentDidMount()
-    {
-    }
+    return (
+        <Container>
+            {/*<h1>Density of words</h1>*/}
+            {/*{densityArr.map((word, index) => {*/}
+            {/*    <h1>Hello</h1>*/}
+            {/*})}*/}
+        </Container>
+    )
 
-    render()
-    {
-        return (
-            <Container>
-                <h1>Container {densityArr.length}</h1>
-                {densityArr.map((word, index) => {
-                    <h1>Hello</h1>
-                })}
-            </Container>
-            // <div style={{color: 'black'}}>
-            //     <h4>Most common words</h4>
-            //     <Row className={classes.container}>
-            //         <Col md={7} className={classes.wordSpan}>
-            //             {props.word}
-            //         </Col>
-            //         <Col md={2} className={classes.procentSpan}>
-            //             %67
-            //         </Col>
-            //         <Col md={3} className='text-right' style={{
-            //             borderRadius: '0px 8px 8px 0px',
-            //             padding: 10,
-            //             color: 'black',
-            //             background: 'white'
-            //         }}>
-            //         </Col>
-            //     </Row>
-            // </div>
-        )
-    }
 }
 
-export
-defaut
-CustomizedTables
+export default CustomizedTables
